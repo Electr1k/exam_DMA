@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/aqua"
     tools:context=".MainActivity">
-
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
@@ -15,17 +14,88 @@
         android:textSize="18sp"
         android:textStyle="italic"
         android:gravity="center"
-        android:text="Сборник моих любимых кНИГ\nя их обожаю!"
+        android:text="Сборник моих любимых книг\nя их обожаю!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/up_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/baseline_add_24"
+        />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RV"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text"
+        app:layout_constraintTop_toBottomOf="@+id/up_menu"
         />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+            <LinearLayout
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="0dp"
+                android:gravity="center_horizontal"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:text="Добавление книги"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/name_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:hint="Название"
+                android:layout_marginHorizontal="10dp"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/author_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:hint="Автор"
+                android:layout_marginHorizontal="10dp"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/count_list_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:hint="Количество страниц"
+                android:layout_marginHorizontal="10dp"
+                android:inputType="text" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Добавить"
+                android:textColor="@color/white"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="@color/aqua"/>
+            </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
