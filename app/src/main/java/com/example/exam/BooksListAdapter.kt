@@ -21,7 +21,7 @@ class BooksListAdapter (
     override fun onBindViewHolder(holder: BookHolder, position: Int) {
         holder.book_name.text = booksList[position].name
         holder.book_author.text = booksList[position].author
-        holder.shelf.text = booksList[position].shelf.toString()
+        holder.count_list.text = booksList[position].countList.toString()
 
 //        holder.itemView.setOnLongClickListener {
 //            onLongClick(recipeList[position], activity = activity)
@@ -36,12 +36,12 @@ class BooksListAdapter (
     class BookHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var book_name: TextView
         var book_author: TextView
-        var shelf: TextView
+        var count_list: TextView
 
         init {
             book_name = itemView.findViewById(R.id.name)
             book_author = itemView.findViewById(R.id.author)
-            shelf = itemView.findViewById(R.id.number)
+            count_list = itemView.findViewById(R.id.countList)
         }
     }
 }
